@@ -1,8 +1,18 @@
+body{
+  margin: 0;
+  font-family: sans-serif;
+}
+
 nav{
   background: rgb(1, 146, 172);
+  margin: 0;
+  padding: 15px;
+  /* width: 80%;
+  margin: 0 auto; */
 }
 
 nav li{
+  padding: 0 20px;
   display: inline-block;
 }
 nav li a{
