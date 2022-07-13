@@ -1,0 +1,11 @@
+nav{
+  background: rgb(1, 146, 172);
+}
+
+nav li{
+  display: inline-block;
+}
+nav li a{
+  color: black;
+  text-decoration: none;
+}
