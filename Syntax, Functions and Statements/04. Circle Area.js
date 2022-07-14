@@ -1,15 +1,17 @@
 function solve(input){
-    let circleArea;
-    let wrongTypeMessage;
+    //let circleArea;
+    let result;
     let inputType = typeof(input);
 
     if (inputType === 'number') {
-        circleArea =  Math.pow(input,2) * Math.PI;
-        console.log(circleArea.toFixed(2));
+        result =  Math.floor(Math.pow(input,2) * Math.PI).toFixed(2);
+        
     }else{
-        wrongTypeMessage = `We can not calculate the circle area, because we receive a ${inputType}.`;
-        console.log(wrongTypeMessage);
+        result = `We can not calculate the circle area, because we receive a ${inputType}.`;
+        
     }
+
+    console.log(result);
 }
 
-solve('da');
+solve(2);
