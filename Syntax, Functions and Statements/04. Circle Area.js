@@ -4,14 +4,13 @@ function solve(input){
     let inputType = typeof(input);
 
     if (inputType === 'number') {
-        result =  Math.floor(Math.pow(input,2) * Math.PI).toFixed(2);
+        result =  Math.pow(input,2) * Math.PI;
+        console.log(result.toFixed(2));
         
     }else{
         result = `We can not calculate the circle area, because we receive a ${inputType}.`;
-        
+        console.log(result);
     }
-
-    console.log(result);
 }
 
-solve(2);
+solve(5);
