@@ -9,6 +9,9 @@ function solve(input){
         }
     }
 
+
+    //consol.log(result.join('\n'));
+    
     for (const num of result) {
         console.log(num);
     }
