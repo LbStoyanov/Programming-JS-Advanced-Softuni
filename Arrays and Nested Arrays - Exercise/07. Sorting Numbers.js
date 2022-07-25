@@ -1,23 +1,25 @@
 function solve(input){
-    input.sort();
+    
+    input.sort(function(a, b) {
+        return a - b;
+      });
+    
 
     let result = [];
 
     let rightCounter = input.length - 1;
 
-
-    for (let i = 0, len = input.length / 2; i < len; i++) {
-        if (rightCounter == input.length / 2 - 1) {
+    for (let i = 0, len = input.length / 2 ; i <= len; i++) {
+        if (rightCounter == input.length / 2) {
             break;
         }
         result.push(input[i]);
         result.push(input[rightCounter]);
         rightCounter--;
-
     }
 
-    console.log(result.join('\n'));
+    
+   return result;
 }
 
-solve([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
-//[-3, 65, 1, 63, 3, 56, 18, 52, 31, 48]
+console.log(solve([1, 65, 3, 52, 48, 63, 31, -3, 18, 56,10]));
