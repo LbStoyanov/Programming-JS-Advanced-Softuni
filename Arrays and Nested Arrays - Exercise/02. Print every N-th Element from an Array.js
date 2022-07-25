@@ -12,7 +12,7 @@ function solve(inputArr, numN) {
     counter++;
   }
 
-  return result.join('\n');
+  return result;
 
 //   for (let element of result) {
 //     console.log(element);

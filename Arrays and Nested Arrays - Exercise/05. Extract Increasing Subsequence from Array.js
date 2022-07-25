@@ -11,6 +11,6 @@ function solve(arr) {
     }
   }
 
-  console.log(result.join("\n"));
+  return result; 
 }
 solve([20, 3, 2, 15, 6, 1]);
