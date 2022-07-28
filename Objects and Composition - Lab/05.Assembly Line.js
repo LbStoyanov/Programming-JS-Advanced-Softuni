@@ -21,7 +21,31 @@ const myCar = {
 
     
     hasAudio(car){
-        currentTrack: {trackName: null, artist: null}            
+        car = {
+            currentTrack: {trackName: null, artist: null},
+            nowPlaying: function(){
+                if (this.currentTrack !== null) {
+                    console.log(`Now playing '${currentTrack.name}' by ${currentTrack.artist}`);
+                } 
+            }    
+        }        
+    },
+
+    hasParktronic(car){
+        car = {
+            checkDistance: function(distance){
+                
+                if (distance < 0.1) {
+                    console.log('Beep! Beep! Beep!');
+                }else if (distance >= 0.1 && distance < 0.25) {
+                    console.log('Beep! Beep!');
+                }else if (distance >= 0.25 && distance < 0.5) {
+                    console.log('Beep!');
+                }else {
+                    console.log('');
+                }
+            }
+        }
     }
 };
 
