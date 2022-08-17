@@ -1,9 +1,10 @@
 function addItem() {
-    let inputElement = document.getElementById('newItemText').value;
+    let inputElement = document.getElementById('newItemText');
     let itemElementsList = document.getElementById('items');
 
     let liElement = document.createElement('li');
-    liElement.textContent = inputElement;
+    liElement.textContent = inputElement.value;
+    inputElement.value = '';
     itemElementsList.appendChild(liElement);
 
     let deleteButtonElement = document.createElement('a');
