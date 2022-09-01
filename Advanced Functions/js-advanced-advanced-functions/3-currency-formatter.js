@@ -1,3 +1,4 @@
+//Task 3
 function createFormatter(separator, symbol, symbolFirst, currencyFormatter) {
     return currencyFormatter.bind(this, separator, symbol, symbolFirst);
     // return (value) => currencyFormatter(separator, symbol, symbolFirst, value);
