@@ -1,6 +1,7 @@
 function getFibonator(){
     let firstNum = 0;
     let secondNum = 1;
+    //let [a,b] = [0,1];
 
     return ()=>{
         let thirtNum = firstNum + secondNum;
