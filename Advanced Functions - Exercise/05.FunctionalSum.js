@@ -7,6 +7,12 @@ function add(num){
 
         return inner;
     }
+
+    inner.toString = ()=>{
+        return sum;
+    }
+
+    return inner(num);
 }
 
-add(1)(6)(-3);
+console.log(add(1)(6)(-3).toString());
