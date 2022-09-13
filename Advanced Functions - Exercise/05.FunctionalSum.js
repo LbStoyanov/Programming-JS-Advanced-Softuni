@@ -4,7 +4,7 @@ function add(num){
     function inner(num2){
 
         sum += num2;
-
+        
         return inner;
     }
 
