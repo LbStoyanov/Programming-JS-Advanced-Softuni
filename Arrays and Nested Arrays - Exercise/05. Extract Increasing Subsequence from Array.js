@@ -5,7 +5,7 @@ function solve(arr) {
 
   for (let i = 1, len = arr.length; i <= len; i++) {
     let currentElement = arr[i];
-    if (currentElement > currentBiggestElement) {
+    if (currentElement >= currentBiggestElement) {
       result.push(currentElement);
       currentBiggestElement = currentElement;
     }
@@ -13,4 +13,4 @@ function solve(arr) {
 
   return result; 
 }
-solve([20, 3, 2, 15, 6, 1]);
+console.log(solve([20, 3, 2, 15, 6, 1]));
