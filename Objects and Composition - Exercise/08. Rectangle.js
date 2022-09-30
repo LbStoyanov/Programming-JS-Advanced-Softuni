@@ -1,5 +1,5 @@
 function rectangle(width,height,color){
-    let colorWithCapital = color.charAt(0).toUpperCase() + color.slice(1);;
+    let colorWithCapital = color.charAt(0).toUpperCase() + color.slice(1);
     let result = {
         width: Number(width),
         height: Number(height),
