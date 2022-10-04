@@ -53,8 +53,9 @@ function solve() {
          if (!allRestaurants.includes(restaurant)) {
             allRestaurants.push(restaurant);
          }else{
-            
-         }
+            allRestaurants.find(restaurant).workersArr.push(workersArr);
+          }
+        
          
       }
 
@@ -71,20 +72,20 @@ function solve() {
       bestRestaurant.textContent =
        `Name: ${avSal.restName} Average Salary: ${avSal.averageSalary.toFixed(2)} Best Salary: ${avSal.bestSalary.toFixed(2)}`;
 
-       
-
       let workers = document.querySelector('#workers p');
 
       let result = [];
 
-      for (let worker of avSal.workersArr) {
+      let sortedWorkers = avSal.workersArr.sort((a,b) => b.averageSalary - a.averageSalary);
+
+      for (let worker of sortedWorkers) {
          result.push(`Name: ${worker.workerName} With Salary: ${worker.workerSalary.toFixed(2)}`);
       }
 
       workers.textContent = result.join(' ');
       
 
-     //["Mikes - Steve 1000, Ivan 200, Paul 800","Fleet - Maria 850, Janet 650","Mikes - Bako 1000"]
+     //["Mikes - Steve 1000, Ivan 200, Paul 800","Fleet - Maria 850, Janet 650"],"Mikes - Bako 1000"]
    
    }
 }
