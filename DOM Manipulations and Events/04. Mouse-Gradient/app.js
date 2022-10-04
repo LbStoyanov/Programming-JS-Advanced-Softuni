@@ -9,7 +9,7 @@ function attachGradientEvents() {
         let percentageBar = event.offsetX / (event.target.clientWidth - 1);
 
         percentageBar = Math.trunc(percentageBar * 100);
-        resultElement.textContent = percentage + "%";
+        resultElement.textContent = percentageBar + "%";
     };
  
     
