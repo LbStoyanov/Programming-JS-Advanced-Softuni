@@ -1,5 +1,6 @@
-function focus() {
+function focused() {
     let mainDiv = document.getElementsByTagName("div")[0];
+    
 
     Array.from(mainDiv.getElementsByTagName("input")).forEach(element => {
         element.addEventListener("focus",focus);
