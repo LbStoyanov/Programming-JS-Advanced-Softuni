@@ -2,6 +2,10 @@ function encodeAndDecodeMessages() {
 
   let buttons = document.querySelectorAll("button");
   let textAreas = document.getElementsByTagName("textarea");
+  let input = document.getElementById('op');
+  let message2 = input.value;
+  console.log(message2);
+  debugger;
   let senderTextArea = textAreas[0];
   let receiverTextArea = textAreas[1];
   
