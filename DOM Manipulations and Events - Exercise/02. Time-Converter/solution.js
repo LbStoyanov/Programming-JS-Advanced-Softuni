@@ -1,29 +1,60 @@
 function attachEventsListeners() {
-  let days = document.getElementById("days");
-  //let daysButton = document.getElementById("daysBtn");
-  let hours = document.getElementById("hours");
-  //let hoursButton = document.getElementById("hoursBtn");
-  let minutes = document.getElementById("minutes");
-  //let minutesButton = document.getElementById("minutesBtn");
-  let seconds = document.getElementById("seconds");
-  //let secondsButton = document.getElementById("secondsBtn");
-
-
-  let conversionObject = {
-        day:1,
-        hour:24,
-        minute:1440,
-        second:86400
-  };
-  
-  document.getElementById("daysBtn").addEventListener('click',onConvert);
-  document.getElementById("hoursBtn").addEventListener('click',onConvert);
-  document.getElementById("minutesBtn").addEventListener('click',onConvert);
-  document.getElementById("secondsBtn").addEventListener('click',onConvert);
-
-  function onConvert(event){
-    
+  let buttons = Array.from(document.querySelectorAll("input[type=button]"));
+ 
+  for(let button of buttons){
+    button.addEventListener("click",convert);
   }
+
+  function convert(e){
+    let value = Number(e.target.parentElement.querySelector("input[type=text]").value);
+    let unit = e.target.id;
+
+    if (unit === "daysBtn") {
+      calculate(value);
+    }else if (unit === "hoursBtn") {
+      calculate(value / 24);
+    }else if (unit === "minutesBtn") {
+      calculate(value / 24 / 60);
+    }else if (unit === "secondsBtn") {
+      calculate(value / 24 / 60 / 60);
+    }
+  }
+
+  function calculate(value){
+    let inputs = Array.from(document.querySelectorAll("input[type=text]"));
+    inputs.shift().value = value;
+    let currentValue = value * 24;
+    for(let input of inputs){
+      input.value = currentValue;
+      currentValue *= 60;
+    }
+  }
+}
+  // let days = document.getElementById("days");
+  // //let daysButton = document.getElementById("daysBtn");
+  // let hours = document.getElementById("hours");
+  // //let hoursButton = document.getElementById("hoursBtn");
+  // let minutes = document.getElementById("minutes");
+  // //let minutesButton = document.getElementById("minutesBtn");
+  // let seconds = document.getElementById("seconds");
+  // //let secondsButton = document.getElementById("secondsBtn");
+
+
+  // let conversionObject = {
+  //       day:1,
+  //       hour:24,
+  //       minute:1440,
+  //       second:86400
+  // };
+  
+  // document.getElementById("daysBtn").addEventListener('click',onConvert);
+  // document.getElementById("hoursBtn").addEventListener('click',onConvert);
+  // document.getElementById("minutesBtn").addEventListener('click',onConvert);
+  // document.getElementById("secondsBtn").addEventListener('click',onConvert);
+
+  // function onConvert(event){
+    
+  // }
 
 //   let currentDays = 0;
 //   let currentHours = 0;
@@ -72,4 +103,4 @@ function attachEventsListeners() {
 //     days.value = currentDays;
     
 //   });
-}
+
