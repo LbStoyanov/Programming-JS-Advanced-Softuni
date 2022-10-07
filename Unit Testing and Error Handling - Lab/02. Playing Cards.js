@@ -9,7 +9,7 @@ function cardCreator(face,suit){
     
 
     if (!faces.includes(face) || !suits[suit]) {
-        throw new Error('Invalid face or suit');
+        throw new Error('Error');
     }
 
     let card = {
