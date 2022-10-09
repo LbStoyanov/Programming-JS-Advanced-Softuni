@@ -8,7 +8,11 @@ function cardCreator(face,suit){
     }
     
 
-    if (!faces.includes(face) || !suits[suit]) {
+    if (!faces.includes(face) && !suits[suit]) {
+        throw new Error('Error');
+    }
+
+    if(face !== face.toUpperCase()){
         throw new Error('Error');
     }
 
