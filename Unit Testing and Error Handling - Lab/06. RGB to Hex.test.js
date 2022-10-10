@@ -107,6 +107,23 @@ describe('General tests', () => {
         
     });
     
-    
-    
+    describe('Should return the correct output', () => {
+        it('Should return the correct string', () => {
+            expect(rgbToHexColor(1,1,1)).to.equal('#010101');
+        });
+
+        it('Should return the correct string', () => {
+            expect(rgbToHexColor(10,10,10)).to.equal('#0A0A0A');
+        });
+
+        it('Should return undefined', () => {
+            expect(rgbToHexColor(10)).to.equal(undefined);
+        });
+
+        it('Should return undefined', () => {
+            expect(rgbToHexColor()).to.equal(undefined);
+        });
+
+        
+    });
 });
