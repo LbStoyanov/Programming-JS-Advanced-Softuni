@@ -1,4 +1,4 @@
-let sum = require('../P04 SumOfNumbers').sum;
+let sum = require('./04. Sum of Numbers');
 let expect = require("chai").expect;
  
  
