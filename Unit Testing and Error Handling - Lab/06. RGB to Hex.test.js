@@ -34,6 +34,10 @@ describe('General tests', () => {
         it('Should return undefined', () => {
             expect(rgbToHexColor(256,3,3)).to.equal(undefined);
         });
+
+        it('Should return undefined', () => {
+            expect(rgbToHexColor(2.5,3,3)).to.equal(undefined);
+        });
         
     });
 
@@ -69,6 +73,10 @@ describe('General tests', () => {
         it('Should return undefined', () => {
             expect(rgbToHexColor(3,256,3)).to.equal(undefined);
         });
+
+        it('Should return undefined', () => {
+            expect(rgbToHexColor(3,2.5,3)).to.equal(undefined);
+        });
         
     });
 
@@ -103,6 +111,10 @@ describe('General tests', () => {
 
         it('Should return undefined', () => {
             expect(rgbToHexColor(3,3,256)).to.equal(undefined);
+        });
+
+        it('Should return undefined', () => {
+            expect(rgbToHexColor(3,3,2.5)).to.equal(undefined);
         });
         
     });
