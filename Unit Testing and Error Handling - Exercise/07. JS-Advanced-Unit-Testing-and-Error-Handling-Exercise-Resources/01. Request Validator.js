@@ -2,22 +2,25 @@ function requestValidator(obj){
 
 
     let possibleMethods = ['GET', 'POST','DELETE','CONNECT'];
-    let patter;
-    let validUris = new RegExp(patter);
+    let pattern = /^[\w.]+$/g;
+    let validUris = new RegExp(pattern);
     let possibleVersions = ['HTTP/0.9','HTTP/1.0','HTTP/1.1','HTTP/2.0'];
 
     let forbidenCharacters = ['>','<','\\','&','\'','"'];
 
-
     if(!possibleMethods.includes(obj.method) || obj.method === undefined){
         throw new Error('Invalid request header: Invalid Method');
+    }
+
+    if (!validUris.exec(obj.uri) || obj.uri === undefined) {
+        throw new Error('Invalid request header: Invalid URI');
     }
 
     if(!possibleVersions.includes(obj.version) || obj.uri === undefined){
         throw new Error('Invalid request header: Invalid Version');
     }
 
-    if(verifyRequestMessage(obj.message) || obj.message === undefined){
+    if(obj.message === undefined || verifyRequestMessage(obj.message)){
         throw new Error('Invalid request header: Invalid Message');
     }
 
@@ -38,8 +41,8 @@ function requestValidator(obj){
 
 requestValidator({
     method: 'POST',
-    uri: 'svn.public.catalog',
-    version: 'HTTP/1.1',
-    //message: '\'; DROP TABLE'
+    uri: 'home.bash',
+    version: 'HTTP/2.0',
+    //message: '-recursive'
   }
   );
