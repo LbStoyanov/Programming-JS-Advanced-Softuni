@@ -13,7 +13,7 @@ function validate() {
 
   usernameInput.addEventListener("change", (e) => {
     let username = e.target.value;
-    let regex = new RegExp("^[a-zA-Z0-9]{3,20}$");
+    let regex = new RegExp("^[a-zA-Z0-9]{3,20}$");'[/8'
 
     if (!regex.test(username)) {
       usernameInput.style.borderColor = "red";
@@ -33,18 +33,18 @@ function validate() {
     }
   });
 
-  //let password;
+  let password;
   let confirmedPassword;
 
   passwordInput.addEventListener("change", (e) => {
     debugger;
-    let password = e.target.value;
+    password = e.target.value;
     let pattern = new RegExp("^w{5,15}$");
-    
+
     if (!pattern.test(password)) {
-        console.log('Deba');
+        console.log('Nema takava parola');
     }else{
-        console.log('ne stava');
+        console.log('Vajish Baio');
     }
   });
 
