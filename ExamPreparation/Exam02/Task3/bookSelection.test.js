@@ -63,12 +63,44 @@ describe("Tests bookSelection", function() {
 
 
      describe('Tests suitableTitles', () => {
-        it("Should  throw error with no array ", function() {
+        it("Should  throw error with no array as first parameter", function() {
             let expected = "Invalid input";
             assert.throws(() => {
                 bookSelection.suitableTitles('','');
               }, expected);
         });
+
+        it("Should  throw error with no string as second parameter ", function() {
+            let expected = "Invalid input";
+           
+            assert.throws(() => {
+                bookSelection.suitableTitles([],[]);
+              }, expected);
+        });
+
+        
+        it("Should  return array of titles ", function() {
+            
+            let b1 ={
+                title: 'IT',
+                genre: 'Horror'
+            }
+
+            let b2 ={
+                title: 'IT2',
+                genre: 'Thriller'
+            }
+           let arr = [b1,b2];
+   
+           let actual = bookSelection.suitableTitles(arr,'Horror');
+        
+           let expected = ['IT'];
+         
+debugger
+           assert.equal(actual,expected);
+           
+        });
+
      });
 
 });
