@@ -7,7 +7,6 @@ function solve() {
   const fuelInputEl = document.getElementById("fuel");
   const firstPriceInputEl = document.getElementById("original-cost");
   const sellingPriceInputEl = document.getElementById("selling-price");
-
   const tableEl = document.getElementById("table-body");
   const soldCarsEl = document.getElementById("cars-list");
   const totalProfit = document.getElementById("profit");
