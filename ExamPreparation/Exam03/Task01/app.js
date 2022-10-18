@@ -59,11 +59,28 @@ function solve() {
     }
 
     function deleteEmail(){
-        let listOfMails = document.getElementById('list');
+
+        let ul = document.getElementsByClassName('delete-list')[0];
+        let li = document.createElement('li');
+
+        let span1 = document.createElement('span');
+        span1.textContent = `To: ${recipientValue}`;
+
+        let span2 = document.createElement('span');
+        span2.textContent = `Title: ${titleValue}`;
+
+        li.appendChild(span1);
+        li.appendChild(span2);
+
+        ul.appendChild(li);
+
+      
+        let listOfMails = document.getElementById('list');;
         listOfMails.remove(); 
     }
 
     function send(){
+      
         let ul = document.getElementsByClassName('sent-list')[0];
 
         let span1 = document.createElement('span');
@@ -79,6 +96,8 @@ function solve() {
         let deleteBtn = document.createElement('button');
         deleteBtn.classList.add('delete');
         deleteBtn.innerText = 'Delete';
+        
+        deleteBtn.addEventListener('click',deleteEmailTest);
 
         div.appendChild(deleteBtn);
 
@@ -90,9 +109,31 @@ function solve() {
 
         ul.appendChild(li);
 
+       
+
         let listOfMails = document.getElementById('list');
         listOfMails.remove();
 
+    }
+
+    function deleteEmailTest(){
+        
+        let ul = document.getElementsByClassName('delete-list')[0];
+
+        let li = document.createElement('li');
+
+        let span1 = document.createElement('span');
+        span1.textContent = `To: ${recipientValue}`;
+
+        let span2 = document.createElement('span');
+        span2.textContent = `Title: ${titleValue}`;
+
+        li.appendChild(span1);
+        li.appendChild(span2);
+        ul.appendChild(li);
+
+        document.getElementsByClassName('sent-list')[0].remove();
+        
     }
 
     
