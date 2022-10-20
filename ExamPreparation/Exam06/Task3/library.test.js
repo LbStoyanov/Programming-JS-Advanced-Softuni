@@ -51,6 +51,12 @@ describe("Tests library", function() {
           assert.equal(actual,expected);
         });
 
+        it("Should apply 50% discount on the price", function() {
+            let actual = library.calcPriceOfBook('IT',1980);
+            let expected = "Price of IT is 10.00";
+            assert.equal(actual,expected);
+          });
+
         it("Should NOT apply discount on the price", function() {
             let actual = library.calcPriceOfBook('IT',1981);
             let expected = "Price of IT is 20.00";
@@ -110,6 +116,12 @@ describe("Tests library", function() {
          let expected = "Great job, the books are arranged.";
          assert.equal(actual,expected);
         });
+
+        it('Should return library ordered', () => {
+            let actual = library.arrangeTheBooks(40);
+            let expected = "Great job, the books are arranged.";
+            assert.equal(actual,expected);
+           });
 
         it('Should return no space', () => {
             let actual = library.arrangeTheBooks(50);
