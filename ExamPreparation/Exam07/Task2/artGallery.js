@@ -51,11 +51,15 @@ class ArtGallery{
     }
 
     buyArticle ( articleModel, articleName, guestName){
-        if (!this.listOfArticles.some(a=>a.articleName === articleName) && !this.possibleArticles.hasOwnProperty(articleModel.toLowerCase())) {
+        if (!this.listOfArticles.some(a=>a.articleName === articleName)) {
             throw new Error("This article is not found.");
         }
 
         let currentArticle = this.listOfArticles.find(a=>a.articleName === articleName);
+
+        if (currentArticle.articleModel !== articleModel) {
+            throw new Error("This article is not found.");
+        }
 
         if (currentArticle.quantity === 0) {
             return `The ${articleName} is not available.`;
@@ -79,9 +83,39 @@ class ArtGallery{
         return `${guestName} successfully purchased the article worth ${necessaryPoints} points.`;
 
     }
+
+    showGalleryInfo (criteria){
+        let result = [];
+        if (criteria === 'article') {
+            result.push('Articles information:\n');
+
+            for(let art of this.listOfArticles){
+                result.push(`${art.articleModel} - ${art.articleName} - ${art.quantity}\n`);
+            }
+        }else if (criteria === 'guest') {
+            result.push('Guest information:\n');
+
+            for(let guest of this.guests){
+                result.push(`${guest.guestName} - ${guest.purchaseArticle}\n`);
+            }
+        }
+
+        return result.join('');
+    }
 }
 
-const artGallery = new ArtGallery('Curtis Mayfield');
+const artGallery = new ArtGallery('Curtis Mayfield'); 
+artGallery.addArticle('picture', 'Mona Liza', 3);
+artGallery.addArticle('Item', 'Ancient vase', 2);
+artGallery.addArticle('picture', 'Mona Liza', 1);
+artGallery.inviteGuest('John', 'Vip');
+artGallery.inviteGuest('Peter', 'Middle');
+artGallery.buyArticle('picture', 'Mona Liza', 'John');
+artGallery.buyArticle('item', 'Ancient vase', 'Peter');
+console.log(artGallery.showGalleryInfo('article'));
+console.log(artGallery.showGalleryInfo('guest'));
+
+/* const artGallery = new ArtGallery('Curtis Mayfield');
 artGallery.addArticle('picture', 'Mona Liza', 3);
 artGallery.addArticle('Item', 'Ancient vase', 2);
 artGallery.addArticle('picture', 'Mona Liza', 1);
@@ -90,7 +124,7 @@ artGallery.inviteGuest('Peter', 'Middle');
 console.log(artGallery.buyArticle('picture', 'Mona Liza', 'John'));
 console.log(artGallery.buyArticle('item', 'Ancient vase', 'Peter'));
 console.log(artGallery.buyArticle('item', 'Mona Liza', 'John'));
-
+ */
 /* John successfully purchased the article worth 200 points.
  Peter successfully purchased the article worth 250 points. 
  This article is not found. */
