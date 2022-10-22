@@ -79,7 +79,7 @@ class footballTeam {
             }else if (ageDifference > 5) {
                 return `${name} will sign a full 5 years contract for ${this.clubName} in ${this.country}!`;
             }
-        }else if (searchedPlayer.age>= age) {
+        }else  {
             return `${name} is above age limit!`;
         }
     }
@@ -93,7 +93,7 @@ class footballTeam {
             result += `Player ${player.name}-${player.playerValue}"\n`;
         }
 
-        return result.slice(0,result.length - 1);
+        return result;
     }
 }
 
